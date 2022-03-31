@@ -1,0 +1,87 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+    </div>
+  </div>
+
+</div>
+<div class="container-fluid mt--7">
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card bg-default shadow">
+        <div class="card-header bg-transparent border-0">
+          <h3 class="text-white mb-0">Agendamentos</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-dark table-flush">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Serviço</th>
+                <th scope="col">Tipo Profissional</th>
+                <th scope="col">Nome Profissional</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Tipo de Pet</th>
+                <th scope="col">Data e Hora de Início</th>
+                <th scope="col">Data e Hora de Fim</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of agendamentoArray">
+                <td>{{item.servico}}</td>
+                <td>{{item.tipoProfissional}}</td>
+                <td>{{item.nomeProfissional}}</td>
+                <td>{{item.cliente}}</td>
+                <td>{{item.tipoDePet}}</td>
+                <td>{{item.dataHoraInicio}}</td>
+                <td>{{item.dataHoraFim}}</td>
+                <td class="text-right">
+                  <div ngbDropdown placement="top-right">
+                    <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                      <a class="dropdown-item" href="javascript:void(0)">Alterar</a>
+                      <a class="dropdown-item" href="javascript:void(0)">Consultar</a>
+                      <a class="dropdown-item" href="javascript:void(0)">Excluir</a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer py-4">
+          <nav aria-label="...">
+            <ul class="pagination justify-content-end mb-0">
+              <li class="page-item disabled">
+                <a class="page-link" href="javascript:void(0)" tabindex="-1">
+                  <i class="fas fa-angle-left"></i>
+                  <span class="sr-only">Anterior</span>
+                </a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="javascript:void(0)">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0)">2 <span class="sr-only">(corrente)</span></a>
+              </li>
+              <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0)">
+                  <i class="fas fa-angle-right"></i>
+                  <span class="sr-only">Próximo</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div style="margin-top: 5%;" class="row">
+        <div class="col-12 text-center">
+          <a href="#!" (click)="cadastrar()" class="btn btn-md btn-primary">Cadastrar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
